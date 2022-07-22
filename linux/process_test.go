@@ -31,6 +31,7 @@ func TestReadProcess(t *testing.T) {
 			FilesystemGid:            65534,
 			FDSize:                   32,
 			Groups:                   []int64{2001, 65534},
+			NSpid                     []int64{3323},
 			VmPeak:                   16216,
 			VmSize:                   16212,
 			VmLck:                    0,

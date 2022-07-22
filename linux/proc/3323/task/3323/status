@@ -7,7 +7,8 @@ TracerPid:	0
 Uid:	0	111	0	111
 Gid:	65534	65534	65534	65534
 FDSize:	32
-Groups:	2001 65534 
+Groups:	2001 65534
+NSpid:  3323
 VmPeak:	   16216 kB
 VmSize:	   16212 kB
 VmLck:	       0 kB

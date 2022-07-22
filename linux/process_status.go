@@ -24,6 +24,7 @@ type ProcessStatus struct {
 	FilesystemGid            uint64
 	FDSize                   uint64
 	Groups                   []int64
+	NSpid                    []int64
 	VmPeak                   uint64
 	VmSize                   uint64
 	VmLck                    uint64
@@ -144,6 +145,17 @@ func ReadProcessStatus(path string) (*ProcessStatus, error) {
 					}
 				}
 
+			}
+		case "NSpid":
+			{
+				f := strings.Fields(v)
+				status.NSpid = make([]int64, len(f))
+
+				for i := range status.NSpid {
+					if status.NSpid[i], err = strconv.ParseInt(f[i], 10, 64); err != nil {
+						return nil, err
+					}
+				}
 			}
 		case "VmPeak":
 			{
